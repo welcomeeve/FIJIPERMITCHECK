@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Access</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .box {
+    width: 100%;
+    max-width: 420px;
+    padding: 35px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+
+}
+
+        .approval{
+    color: #2ecc71; /* Professional Green */
+    font-weight: 600;
+    margin-left: 38%;
+}
+
+
+
+        h2 {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+
+
+        input {
+            width: 70%;
+            padding: 14px;
+            margin-top: 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 5px;
+            outline: none;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 14px;
+            width: 100%;
+            background: #00c6ff;
+            background: linear-gradient(to right, #0072ff, #00c6ff);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .error {
+            color: #ff4d4d;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .content {
+            display: none;
+            text-align: left;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box" id="loginBox">
+    <h2>Secure Access</h2>
+    <p>Access</p>
+
+    <input type="password" id="pin" maxlength="5" placeholder="•••••">
+    <button onclick="checkPin()">Unlock</button>
+
+    <div class="error" id="error">❌ Wrong pin </div>
+</div>
+
+<div class="box content" id="contentBox">
+    <img src="">
+    <h2 class="approval">Approval</h2>
+    <p>
+        AOPU CHOWDHURY <br>
+        A081774540
+         <br><br>
+
+        Your visa has been approved <br>
+        Vous avez obtenu un permis de séjour de deux ans aux Fidji.<br> Nous espérons que vous ne vous livrerez à aucune activité criminelle. Bienvenue aux Fidji.
+    </p>
+
+
+
+
+    
+</div>
+
+<script>
+    const correctPin = "46349";
+      
+
+    function checkPin() {
+        const pin = document.getElementById("pin").value;
+
+        if (pin === correctPin) {
+            document.getElementById("loginBox").style.display = "none";
+            document.getElementById("contentBox").style.display = "block";
+        } else {
+            document.getElementById("error").style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
+
